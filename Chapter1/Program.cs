@@ -1,4 +1,5 @@
 ﻿using Chapter1.SimUDuck;
+using Chapter1.SimUDuck.Fly;
 using System;
 
 namespace Chapter1
@@ -7,9 +8,14 @@ namespace Chapter1
     {
         static void Main(string[] args)
         {
-            DuckBase duck = new Mallard();
-            duck.Quack();
-            duck.Fly();
+            DuckBase mallard = new MallardDuck();
+            mallard.Quack();
+            mallard.Fly();
+
+            DuckBase model = new ModelDuck();
+            model.Fly();
+            model.SetFlyBehavior(new FlyRocketPowered());
+            model.Fly();
 
             Console.ReadLine();
         }

@@ -4,17 +4,17 @@ using System;
 
 namespace Chapter1.SimUDuck
 {
-    public class Mallard : DuckBase
+    public class ModelDuck : DuckBase
     {
-        public Mallard() : base()
+        public ModelDuck()
         {
-            _flyBehavior = new FlyWithWings();
+            _flyBehavior = new FlyNoWay();
             _quackBehavior = new NormalQuack();
         }
 
         public override void Display()
         {
-            Console.WriteLine("I am a Mallard Duck");
+            Console.WriteLine("I am a model duck");
         }
     }
 }

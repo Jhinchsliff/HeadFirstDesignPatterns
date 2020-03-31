@@ -9,6 +9,16 @@ namespace Chapter1.SimUDuck
 
         public abstract void Display();
 
+        public void SetFlyBehavior(IFly flyBehavior)
+        {
+            _flyBehavior = flyBehavior;
+        }
+
+        public void SetQuackBehavior(IQuack quackBehavior)
+        {
+            _quackBehavior = quackBehavior;
+        }
+
         public void Fly()
         {
             _flyBehavior.Fly();
