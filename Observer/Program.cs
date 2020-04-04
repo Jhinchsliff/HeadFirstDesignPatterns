@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Observer.DisplayElements;
+using System;
 
 namespace Observer
 {
@@ -6,7 +7,15 @@ namespace Observer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WeatherData weatherData = new WeatherData();
+            CurrentConditionDisplay currentDisplay = new CurrentConditionDisplay(weatherData);
+            StatisticDisplay statsDisplay = new StatisticDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 65, 4f);
+            weatherData.SetMeasurements(82, 70, 29.2f);
+            weatherData.SetMeasurements(78, 90, 29.2f);
+
+            Console.ReadLine();
         }
     }
 }
